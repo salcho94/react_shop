@@ -11,13 +11,13 @@ import Error from "./components/Error";
 import {useState} from "react";
 import data from "./data";
 function App() {
-    const [shoes] = useState(data)
+    const [shoes,setShoes] = useState(data)
   return (
     <div className="App">
         <NavBar />
         <Routes>
-            <Route path ="/" element={<MainList shoes={shoes}/>}/>
-            <Route path ="/detail/:id" element={<Detail shoes={shoes}/>}/>
+            <Route path ="/" element={<MainList shoes={shoes} setShoes={setShoes}/>}/>
+            <Route path ="/detail/:id" element={<Detail shoes={shoes} />}/>
             <Route path ="/about" element={<About/>}/>
             <Route path ="*" element={<Error/>}/>
         </Routes>
